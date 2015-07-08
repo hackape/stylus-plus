@@ -1,0 +1,43 @@
+// extend css property "border(-side)"
+
+-border($side, args)
+  $w = 1px
+  $s = solid
+  $c =  $border-color
+  if length(arguments) == 0
+    s('border-%s: %s %s %s;', $side, $w, $s, $c)
+  else
+    for i in arguments
+      if typeof(i) == "rgba" || i == transparent
+        $c = i
+      else if typeof(i) == "unit"
+        $w = i
+      else if typeof(i) == "ident"
+        $s = i
+    s('border%s: %s %s %s;', unquote($side), $w, $s, $c)
+
+border()
+  -border('', arguments)
+
+border-left()
+  -border('-left', arguments)
+
+border-right()
+  -border('-right', arguments)
+
+border-top()
+  -border('-top', arguments)
+
+border-bottom()
+  -border('-bottom', arguments)
+
+border-tb()
+  border-top(arguments)
+  border-bottom(arguments)
+
+border-lr()
+  border-left(arguments)
+  border-right(arguments)
+
+border-radius($radius = $border-radius)
+  border-radius: $radius
