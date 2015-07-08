@@ -1,4 +1,6 @@
-// extend css property "border(-side)"
+// Extend css property "border(-side)" 
+
+$border-color = #767676
 
 -border($side, args)
   $w = 1px
@@ -31,6 +33,8 @@ border-top()
 border-bottom()
   -border('-bottom', arguments)
 
+// Shorthands
+
 border-tb()
   border-top(arguments)
   border-bottom(arguments)
@@ -38,6 +42,3 @@ border-tb()
 border-lr()
   border-left(arguments)
   border-right(arguments)
-
-border-radius($radius = $border-radius)
-  border-radius: $radius
