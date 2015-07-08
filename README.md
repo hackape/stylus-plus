@@ -10,36 +10,6 @@ Rather, if you prefer fine control over what to use, import modules as it please
 
 ## Docs
 
-### border
-
-`border` default to `1px solid $border-color`, where `$border-color = #767676`, which is configurable in `border.styl`. Supply any one or more of the 3 values will override default values.
-
-```
-// defaults
-border()
-=> border: 1px solid $border-color;
-
-// 1 argument
-border(red)
-=> border: 1px solid #f00;
-
-border(2px)
-=> border: 2px solid $border-color;
-
-// 2 arguments, order doesn't matter
-border(dotted 2px)
-=> border: 2px dotted $border-color;
-
-// sided border property follows same rule
-border-left()
-=> border-left: 1px solid $border-color;
-
-// and here comes the shorthands
-border-lr()
-=> border-left: 1px solid $border-color;
-   border-right: 1px solid $border-color;
-```
-
 ### colors
 
 For those who are familiar with Photoshop HSB color, use `hsb($hue, $saturation, $brightness)` to define colors. 
@@ -60,9 +30,10 @@ color: grey(20)
 => color: #333;
 ```
 
+
 ### position
 
-`relative(), absolute(), fixed()` as 3 shorthands mixins for `position` property. Following examples illustrate with `relative()`, same rules apply to `aboslute()` and `fixed()`.
+`relative(), absolute(), fixed()` as 3 shorthand mixins for `position` property. Following examples illustrate with `relative()`, same rules apply to `aboslute()` and `fixed()`.
 
 ```
 relative()
@@ -80,13 +51,6 @@ relative(10px 20px)
    top: 10px;
    right: 20px;
    bottom: 10px;
-   left: 20px;
-
-relative(10px 20px 15px)
-=> position: relative;
-   top: 10px;
-   right: 20px;
-   bottom: 15px;
    left: 20px;
 
 relative(10px 20px 15px)
@@ -123,4 +87,58 @@ relative(top left 5px)
 => position: relative;
    top: 0;
    left: 5px;
+```
+
+
+### padding/margin
+
+A bunch of shorthands.
+
+```
+padding-lr(10px)
+=> padding-left: 10px;
+   padding-right: 10px;
+
+padding-tb(10px)
+=> padding-top: 10px;
+   padding-bottom: 10px;
+
+margin-lr(10px)
+=> margin-left: 10px;
+   margin-right: 10px;
+
+margin-tb(10px)
+=> margin-top: 10px;
+   margin-bottom: 10px;
+```
+
+
+### border
+
+`border` default to `1px solid $border-color`, whereas `$border-color = #767676` by default, yet is configurable in `border.styl`. Supply any one or more of the 3 values will override default values.
+
+```
+// defaults
+border()
+=> border: 1px solid $border-color;
+
+// 1 argument
+border(red)
+=> border: 1px solid #f00;
+
+border(2px)
+=> border: 2px solid $border-color;
+
+// 2 arguments, order doesn't matter
+border(dotted 2px)
+=> border: 2px dotted $border-color;
+
+// sided border property follows same rule
+border-left()
+=> border-left: 1px solid $border-color;
+
+// and here comes the shorthands
+border-lr()
+=> border-left: 1px solid $border-color;
+   border-right: 1px solid $border-color;
 ```
