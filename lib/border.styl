@@ -7,7 +7,7 @@ $border-color = #767676
   $s = solid
   $c =  $border-color
   if length(arguments) == 0
-    s('border-%s: %s %s %s;', $side, $w, $s, $c)
+    border{$side}: $w $s $c
   else
     for i in arguments
       if typeof(i) == "rgba" || i == transparent
@@ -16,7 +16,7 @@ $border-color = #767676
         $w = i
       else if typeof(i) == "ident"
         $s = i
-    s('border%s: %s %s %s;', unquote($side), $w, $s, $c)
+    border{$side}: $w $s $c
 
 border()
   -border('', arguments)
